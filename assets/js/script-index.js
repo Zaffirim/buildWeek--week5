@@ -2,9 +2,9 @@ const checkbox = document.getElementById("checkbox");
 const errorMessage = document.getElementById("error-message");
 const proceedLink = document.getElementById("proceed-link");
 
-const checkCheckbox = (e) => {
+const checkCheckbox = (event) => {
   if (!checkbox.checked) {
-    e.preventDefault();
+    event.preventDefault();
     errorMessage.style.display = "block";
   }
 };
