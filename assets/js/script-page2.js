@@ -84,7 +84,18 @@ const questions = [
 /* VARIABILI GLOBALI CHE CI SERVIRANNO IN SEGUITO */
 
 const nextButton = document.getElementById("next-button");
+const quizSpace = document.querySelector(".quiz-space");
 let currentQuestion = 1;
+let totalScore = 0;
+
+const emptyQuizSpace = () => {
+  quizSpace.innerHTML = "";
+};
+
+const createCurrentQuestiontext = () => {
+  const currentQuestionTxt = document.getElementById("current-question");
+  currentQuestionTxt.innerText = `Question ${currentQuestion}/${questions.length}`;
+};
 
 /* FUNZIONE CHE ENTRA NELL'ARRAY E PRENDE L'ELEMENTO 'questionText': CHE CI SERVIRà PER POPOLARE IL NOSTRO <h2> NELL'HTML */
 
@@ -95,7 +106,6 @@ const createQuestionText = () => {
 
 /* FUNZIONE CHE CI CREA IL DIV CON LE DOMANDE E I BOTTONI DI RISPOSTA E LI POPOLA*/
 const createAnswerOptions = () => {
-  const quizSpace = document.querySelector(".quiz-space");
   const answerOptions = questions[currentQuestion - 1].answerOptions;
   for (let i = 0; i < answerOptions.length; i++) {
     const answerOption = document.createElement("div");
@@ -108,11 +118,31 @@ const createAnswerOptions = () => {
   }
 };
 
-const eventHandler = (event) => {};
+const checkScore = () => {
+  const answerOptions = questions[currentQuestion - 1].answerOptions;
+  const chosenOption = document.querySelector('input[name="quiz"]:checked');
+  const answer = answerOptions.find((option) => option.id === chosenOption.id);
+
+  if (answer.isCorrect) {
+    totalScore++;
+  }
+  currentQuestion++;
+};
+
+const eventHandler = (event) => {
+  event.preventDefault();
+  checkScore();
+  emptyQuizSpace();
+  createQuestionText();
+  createAnswerOptions();
+  createCurrentQuestiontext();
+  console.log(totalScore);
+};
 
 const init = (event) => {
   createQuestionText();
   createAnswerOptions();
+  createCurrentQuestiontext();
 };
 
 nextButton.addEventListener("click", eventHandler);
