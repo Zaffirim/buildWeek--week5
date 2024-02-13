@@ -1,9 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&family=Outfit:wght@100;300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Page1</title>
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <img src="../assets/img/epicode_logo.png" alt="logo epicode" />
+    </header>
+    <main>
+      <div class="container">
+        <h1>Welcome to <span>your exam</span></h1>
+
+        <!-- ISTRUZIONI INIZIALI -->
+
+        <div class="welcome-text">
+          <h4>Instructions</h4>
+          <p>
+            We don't expect most engineers to know the aswers to all of these
+            questions, so don't worry if you're unsure of a few of them
+          </p>
+        </div>
+        <div class="welcome-list">
+          <!-- LISTA CON ISTRUZIONI -->
+
+          <ul>
+            <li>
+              Each question is <span>timed</span> and can only be
+              <span>answered once.</span>
+            </li>
+            <li>
+              changing browser tab or opening other windows will
+              <span>invalidate the question.</span>
+            </li>
+            <li>This exam will take approx. <span>0-5 minutes.</span></li>
+          </ul>
+        </div>
+
+        <!-- FORM CON CHECKBOX-->
+
+        <div class="welcome-form">
+          <form>
+            <div class="form-checkbox">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox"
+                >I promise to answer myself without help from anyone</label
+              >
+              <p id="error-message">
+                Devi spuntare questa opzione per poter procedere!
+              </p>
+            </div>
+          </form>
+        </div>
+        <a href="page2.html" id="proceed-link">
+          <div class="proceed">
+            <p>proceed</p>
+          </div>
+        </a>
+      </div>
+    </main>
+    <script src="../assets/js/script-index.js"></script>
+  </body>
 </html>

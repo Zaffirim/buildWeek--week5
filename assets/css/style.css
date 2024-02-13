@@ -1,0 +1,99 @@
+body, html {
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding-left: 4%;
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+}
+
+header {
+    margin-top: 3rem;
+}
+
+header img {
+    width: 15%;
+}
+
+h1 {
+    margin-top: 1em;
+    width: 30%;
+    font-size: 5em;
+    line-height: 0.7em;
+    font-weight: 300;
+}
+
+h1 span {
+    font-weight: 700;
+}
+
+.welcome-text {
+    margin-bottom: 3em;
+}
+
+.welcome-text h4 {
+    font-size: 2em;
+    font-weight: 500;
+    color: rgb(255, 0, 196);
+    margin-bottom: 0;
+}
+
+.welcome-text p {
+    margin-top: 10px;
+    font-weight: 300;
+    width: 35%;
+}
+
+.welcome-list {
+    margin-bottom: 5em;
+}
+
+.welcome-list ul {
+    padding-left: 1em;
+}
+
+li {
+    font-weight: 300;
+}
+
+li span {
+    font-weight: 700;
+}
+
+.welcome-form {
+    display: inline-block;
+    margin-right: 25%;
+}
+
+.form-checkbox label {
+    font-weight: 300;
+}
+
+
+#error-message {
+    display: none;
+    color: rgb(255, 0, 196);
+}
+
+#proceed-link {
+    text-decoration: none;
+    color: rgb(28, 28, 28);
+}
+
+.proceed {
+     display: inline-block;
+    background-color: aqua;
+    text-align: center;
+    padding: 1em 3em;
+    box-shadow: 0 0px 16px 0 aqua, 0 0px 20px 0 aqua;
+}
+
+.proceed p {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 800;
+    margin: 0;
+}
