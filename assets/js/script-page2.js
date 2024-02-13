@@ -148,3 +148,6 @@ const init = (event) => {
 nextButton.addEventListener("click", eventHandler);
 
 document.addEventListener("DOMContentLoaded", init);
+
+//PER NAVIGARE IN UN'ALTRA PAGINA
+//window.location.href = 'page3.html';

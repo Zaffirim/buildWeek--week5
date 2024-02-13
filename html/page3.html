@@ -1,61 +1,54 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benchmark - Results</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
+  <body>
     <header>
-
-        <img src="../assets/img/epicode_logo.png" />
-
+      <img src="../assets/img/epicode_logo.png" />
     </header>
 
     <main>
+      <div>
+        <h1>Results</h1>
+        <p>The summary of your answers</p>
+      </div>
 
+      <div id="centre-page">
+        <div id="result-space">
+          <div id="correct-space">
+            <p>
+              Correct<span id="percentage-correct"
+                ><!--Qui generare la percentuale di risposte corrette--></span
+              >
+            </p>
+            <p id="total-correct"></p>
+          </div>
+
+          <div id="result-message-graph">
+            <p id="textResult"></p>
+            <p id="textComment"></p>
+          </div>
+
+          <div id="wrong-space">
+            <p>
+              Wrong<span id="percentage-wrong"
+                ><!--Qui generare la percentuale di risposte sbagliate--></span
+              >
+            </p>
+            <p id="total-wrong"></p>
+          </div>
+        </div>
+      </div>
+
+      <a href="../html/page4.html" id="rateUs">
         <div>
-
-            <h1>Results</h1>
-            <p>The summary of your answers:</p>
-
+          <p>Rate Us</p>
         </div>
-
-        <div id="centroPagina">
-
-            <div id="resultSpace">
-
-                <div id="correct">
-                    <p>Correct<span id="percentuale"><!--Qui generare il numero di risposte corrette--></span></p>
-                    <p id="domandeCorrette"></p>
-                </div>
-
-                <div id="results">
-                    <p id="textResult"> <span></span> </p>
-                    <p id="textComment"></p>
-
-                </div>
-
-                <div id="wrong">
-                    <p>Correct<span id="percentualeSbagliate"><!--Qui generare il numero di risposte sbagliate--></span></p>
-                    <p id="domandeSbagliate"></p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <a href="" id="rateUs">
-            <div id="rateBox">
-                <p>Rate Us</p>
-            </div>
-        </a>
-
+      </a>
     </main>
-
-</body>
-
+  </body>
 </html>
