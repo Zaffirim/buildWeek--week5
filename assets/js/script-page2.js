@@ -94,7 +94,7 @@ const emptyQuizSpace = () => {
 
 const createCurrentQuestiontext = () => {
   const currentQuestionTxt = document.getElementById("current-question");
-  currentQuestionTxt.innerText = `Question ${currentQuestion}/${questions.length}`;
+  currentQuestionTxt.innerHTML = `Question ${currentQuestion} <span id="purple-txt">/ ${questions.length}</span>`;
 };
 
 /* FUNZIONE CHE ENTRA NELL'ARRAY E PRENDE L'ELEMENTO 'questionText': CHE CI SERVIRà PER POPOLARE IL NOSTRO <h2> NELL'HTML */

@@ -72,7 +72,6 @@ li span {
     font-weight: 300;
 }
 
-
 #error-message {
     display: none;
     color: rgb(255, 0, 196);
@@ -96,4 +95,88 @@ li span {
     font-size: 1.3em;
     font-weight: 800;
     margin: 0;
+}
+
+/* PAGE 2 - BENCHMARK QUIZ */
+
+#page2-main, #page2-form {
+    text-align: center;
+}
+
+#question-txt {
+    font-size: 3em;
+}
+
+#page2-form, .quiz-space  {
+    margin: 0 auto;
+}
+
+
+
+.quiz-space {
+    width: 60%;
+}
+
+.answer-option {
+    display: inline-block;
+    width: 50%
+
+}
+
+.answer-option label {
+    display: block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white; 
+    margin: 1rem; 
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 1.3rem 0.1rem;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-size: 1.2em;
+    border: 4px solid rgba(255, 255, 255, 0.732);
+
+}
+
+.answer-option label:hover{
+    background-color: rgba(255, 255, 255, 0.206);
+}
+
+
+.answer-option input[type="radio"] {
+    display: none;
+}
+
+.answer-option input:checked + label {
+    background-color: #B40088; 
+    color: white; 
+    border: 4px solid rgba(255, 255, 255, 0.732);
+}
+
+#next-button {
+    margin-top: 4em;
+    padding: 1em 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+#next-button:hover {
+    background-color: rgba(255, 255, 255, 0.124);
+}
+
+#current-question {
+    margin-top: 4em;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+#purple-txt {
+    color: #B40088;
 }
