@@ -1,3 +1,5 @@
+/* CREAZIONE DELLA STRUTTURA */
+
 const questions = [
   {
     questionNumber: 1,
@@ -79,14 +81,19 @@ const questions = [
   },
 ];
 
+/* VARIABILI GLOBALI CHE CI SERVIRANNO IN SEGUITO */
+
 const nextButton = document.getElementById("next-button");
 let currentQuestion = 1;
+
+/* FUNZIONE CHE ENTRA NELL'ARRAY E PRENDE L'ELEMENTO 'questionText': CHE CI SERVIRà PER POPOLARE IL NOSTRO <h2> NELL'HTML */
 
 const createQuestionText = () => {
   const questionText = document.getElementById("question-txt");
   questionText.innerText = questions[currentQuestion - 1].questionText;
 };
 
+/* FUNZIONE CHE CI CREA IL DIV CON LE DOMANDE E I BOTTONI DI RISPOSTA E LI POPOLA*/
 const createAnswerOptions = () => {
   const quizSpace = document.querySelector(".quiz-space");
   const answerOptions = questions[currentQuestion - 1].answerOptions;
