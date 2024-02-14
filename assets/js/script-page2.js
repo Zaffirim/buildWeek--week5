@@ -87,14 +87,19 @@ const nextButton = document.getElementById("next-button");
 const quizSpace = document.querySelector(".quiz-space");
 let currentQuestion = 1;
 let totalScore = 0;
+const totalQuestions = questions.length;
+
+/* FUNZIONE CHE SVUOTA IL DIV 'quizSpace' sapzio in cui ci sono le risposte, sennò ci sarebbero le risposte della domanda prima e quelle della domanda dopo */
 
 const emptyQuizSpace = () => {
   quizSpace.innerHTML = "";
 };
 
+// FUNZIONE CHE TIENE AGGIORNATO IL <p class = "current-question">
+
 const createCurrentQuestiontext = () => {
   const currentQuestionTxt = document.getElementById("current-question");
-  currentQuestionTxt.innerText = `Question ${currentQuestion}/${questions.length}`;
+  currentQuestionTxt.innerHTML = `Question ${currentQuestion} <span id="purple-txt">/ ${questions.length}</span>`;
 };
 
 /* FUNZIONE CHE ENTRA NELL'ARRAY E PRENDE L'ELEMENTO 'questionText': CHE CI SERVIRà PER POPOLARE IL NOSTRO <h2> NELL'HTML */
@@ -118,25 +123,39 @@ const createAnswerOptions = () => {
   }
 };
 
+/* FUNZIONE MOLTO IMPORTANTE CHE TIENE CONTO DEL CLICK DI UNO USER E CONFRONTA L'ID DELLE answerOption con L'ID CLICKATA DALLO USER, 
+SE LA RISPOSTA è CORRETTA totalScore VERRà INCREMENTATA DI UNO E IN OGNI CASO  currentQuestion VERRà INCREMENTATO DI 1 COSì DA PERMETTERCI DI PASSARE 
+ALLA PROSSIMA DOMANDA
+ */
+
 const checkScore = () => {
   const answerOptions = questions[currentQuestion - 1].answerOptions;
   const chosenOption = document.querySelector('input[name="quiz"]:checked');
   const answer = answerOptions.find((option) => option.id === chosenOption.id);
 
-  if (answer.isCorrect) {
+  if (answer && answer.isCorrect) {
     totalScore++;
   }
   currentQuestion++;
 };
 
+/* FUNZIONE CHE GESTISCE TUTTE LE FUNZIONI DELLA PAGINA E CHE QUANDO FINISCONO LE DOMANDE SALVA IL totalScore E CI PORTA ALLA page3
+ */
+
 const eventHandler = (event) => {
   event.preventDefault();
   checkScore();
-  emptyQuizSpace();
-  createQuestionText();
-  createAnswerOptions();
-  createCurrentQuestiontext();
-  console.log(totalScore);
+  if (currentQuestion <= questions.length) {
+    emptyQuizSpace();
+    createQuestionText();
+    createAnswerOptions();
+    createCurrentQuestiontext();
+    console.log(totalScore);
+  } else {
+    localStorage.setItem("totalScore", totalScore.toString());
+    localStorage.setItem("totalQuestions", totalQuestions.toString());
+    window.location.href = "page3.html";
+  }
 };
 
 const init = (event) => {
