@@ -186,3 +186,9 @@ li span {
 #textComment {
     display: none;
 }
+
+/* PAGE 4 */
+
+.checked {
+    fill: #B40088;
+}
