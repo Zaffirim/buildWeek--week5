@@ -87,6 +87,7 @@ const nextButton = document.getElementById("next-button");
 const quizSpace = document.querySelector(".quiz-space");
 let currentQuestion = 1;
 let totalScore = 0;
+const totalQuestions = questions.length;
 
 /* FUNZIONE CHE SVUOTA IL DIV 'quizSpace' sapzio in cui ci sono le risposte, sennò ci sarebbero le risposte della domanda prima e quelle della domanda dopo */
 
@@ -132,7 +133,7 @@ const checkScore = () => {
   const chosenOption = document.querySelector('input[name="quiz"]:checked');
   const answer = answerOptions.find((option) => option.id === chosenOption.id);
 
-  if (answer.isCorrect) {
+  if (answer && answer.isCorrect) {
     totalScore++;
   }
   currentQuestion++;
@@ -152,6 +153,7 @@ const eventHandler = (event) => {
     console.log(totalScore);
   } else {
     localStorage.setItem("totalScore", totalScore.toString());
+    localStorage.setItem("totalQuestions", totalQuestions.toString());
     window.location.href = "page3.html";
   }
 };
