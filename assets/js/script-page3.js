@@ -1,7 +1,7 @@
 /* VARIABILI GLOBALI CHE CI SERVIRANNO IN SEGUITO  TRA CUI totalScore e totalQuestions CHE CI SIAMO PORTATI DALLA PAGE2 TRAMITE L'UTILIZZO DI LOCALSTORAGE*/
 const totalScore = Number(localStorage.getItem("totalScore")) || 0;
 const totalQuestions = Number(localStorage.getItem("totalQuestions")) || 0;
-const percentage = Math.round((totalScore / totalQuestions) * 100);
+const percentage = Math.floor((totalScore / totalQuestions) * 1000) / 10;
 
 /*  FUNZIONE CHE CI CREA LA SEZIONE IN CUI ANDREMO A METTERE IL RISULTATO DELLE RISPOSTE CORRETTE E ANCHE IL CENTRO DEL DIAGRAMMA DOVE CI DARà LE CONGRATULAZIONI SE PASSATO 
 O LE SCUSE SE SI è STATI BOCCIATI */
@@ -20,7 +20,7 @@ const createWrongSection = () => {
   const wrongPercentage = document.getElementById("percentage-wrong");
   const totalWrong = document.getElementById("total-wrong");
 
-  wrongPercentage.innerText = `${100 - percentage}%`;
+  wrongPercentage.innerText = `${(100 - percentage).toFixed(1)}%`;
   totalWrong.innerText = `${
     totalQuestions - totalScore
   } / ${totalQuestions} questions`;
