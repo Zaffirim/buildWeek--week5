@@ -192,3 +192,7 @@ li span {
 .checked {
     fill: #B40088;
 }
+
+#error-message-p4 {
+    display: none;
+}

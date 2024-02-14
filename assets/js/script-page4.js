@@ -1,10 +1,23 @@
 const stars = [];
 
+function highlightStars() {
+  const index = this.getAttribute("id");
+  for (let j = 0; j < stars.length; j++) {
+    const starPath = stars[j].querySelector("path");
+    if (j <= index) {
+      starPath.setAttribute("fill", "#D4C5E2");
+    } else {
+      starPath.setAttribute("fill", "#000000");
+    }
+  }
+}
+
 const createStars = () => {
   const starBar = document.getElementById("starBar");
   for (let i = 0; i < 10; i++) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("id", i);
+    svg.setAttribute("class", "star");
 
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute(
@@ -13,26 +26,29 @@ const createStars = () => {
     );
     path.setAttribute("fill", "#000000");
 
-    stars.push(svg);
-
-    svg.addEventListener("click", () => {
-      for (let star of stars) {
-        const starPath = document.querySelector("svg path");
-        starPath.setAttribute("fill", "#D4C5E2");
-      }
-    });
-
     svg.appendChild(path);
     starBar.appendChild(svg);
+    stars.push(svg);
+
+    svg.addEventListener("click", highlightStars);
   }
 };
-
-const highlightStars = (numberOfStars) => {};
 
 const eventHandler = (event) => {
   createStars();
   console.log(stars);
-  //highlightStars(7);
 };
 
 document.addEventListener("DOMContentLoaded", eventHandler);
+
+const moreInfoButton = document.getElementById("moreInfo");
+const feedbackText = document.getElementById("feedback-txt");
+const errorMessage = document.getElementById("error-message-p4");
+
+moreInfoButton.addEventListener("click", () => {
+  if (feedbackText.value) {
+    alert("Thank you for your feedback");
+  } else {
+    errorMessage.style.display = "block";
+  }
+});
