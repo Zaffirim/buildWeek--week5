@@ -1,6 +1,6 @@
 const totalScore = Number(localStorage.getItem("totalScore")) || 0;
 const totalQuestions = Number(localStorage.getItem("totalQuestions")) || 0;
-const percentage = Math.round((totalScore / totalQuestions) * 100);
+const percentage = Math.floor((totalScore / totalQuestions) * 1000) / 10;
 
 const createCorrectSection = () => {
   const correctPercentage = document.getElementById("percentage-correct");
@@ -14,7 +14,7 @@ const createWrongSection = () => {
   const wrongPercentage = document.getElementById("percentage-wrong");
   const totalWrong = document.getElementById("total-wrong");
 
-  wrongPercentage.innerText = `${100 - percentage}%`;
+  wrongPercentage.innerText = `${(100 - percentage).toFixed(1)}%`;
   totalWrong.innerText = `${
     totalQuestions - totalScore
   } / ${totalQuestions} questions`;

@@ -11,7 +11,7 @@ body, html {
 }
 
 header {
-    margin-top: 3rem;
+    padding-top: 3em;
 }
 
 header img {
@@ -183,8 +183,104 @@ li span {
 
 /* PAGE 3 */
 
+#page3-main {
+    text-align: center;
+}
+
 #textComment {
     display: none;
+}
+
+.title h2 {
+    font-size: 3.5em;
+    margin: 0.5em 0 0 0;
+}
+
+.title p {
+    font-size: 2em;
+    font-weight: 200;
+    margin-top: 0;
+}
+
+#correct-space, #result-message-graph, #wrong-space {
+    display: inline-block;
+}
+
+#result-message-graph{
+    width: 40%;
+}
+
+#correct-space{
+    text-align: left;
+}
+
+#wrong-space{
+    text-align: right;
+    color: rgba(255, 255, 255, 0.745);
+}
+
+#correct-space,  #wrong-space {
+    width: 20%;
+}
+
+#correct-space p:first-child, #wrong-space p:first-child {
+    font-size: 3em;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+#percentage-correct, #percentage-wrong{
+    display: block;
+    font-weight: 700;
+    margin: 0;
+}
+
+#total-correct, #total-wrong {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+
+#textResult {
+    font-size: 1.2em;
+}
+
+#textResult span {
+    display: block;
+    color: aqua;
+}
+
+#textComment {
+    margin: 0 auto;
+    width: 31%;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
+
+#rateUs {
+    text-decoration: none;
+}
+
+.rate-button {
+    width: 14%;
+    margin: 0 auto;
+    margin-top: 5em;
+    border: solid 2px white;
+
+
+}
+
+.rate-button p {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.rate-button:hover {
+    background: rgba(255, 255, 255, 0.124);
 }
 
 /* PAGE 4 */

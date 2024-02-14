@@ -89,6 +89,34 @@ let currentQuestion = 1;
 let totalScore = 0;
 const totalQuestions = questions.length;
 
+let timeLeft = 5;
+let questionTimer;
+
+//FUNZIONE CHE, ALLO SCADERE DEL TEMPO, CREA UN NUOVO EVENTO 'CLICK' SUL BOTTONE 'NEXT' E PASSA ALLA SCHERMATA SUCCESSIVA
+
+const startQuestionTimer = () => {
+  clearInterval(questionTimer);
+  timeLeft = 5;
+  updateTimerDisplay(timeLeft);
+
+  questionTimer = setInterval(() => {
+    timeLeft -= 1;
+    updateTimerDisplay(timeLeft);
+
+    if (timeLeft <= 0) {
+      clearInterval(questionTimer);
+      eventHandler();
+    }
+  }, 1000);
+};
+
+// FUNZIONE PER MOSTRARE SUL BROWSER I SECONDI RIMANENTI
+
+const updateTimerDisplay = (seconds) => {
+  const timerDisplay = document.querySelector(".timer");
+  timerDisplay.innerHTML = `<p>Tempo rimanente: ${seconds} secondi</p>`;
+};
+
 /* FUNZIONE CHE SVUOTA IL DIV 'quizSpace' sapzio in cui ci sono le risposte, sennò ci sarebbero le risposte della domanda prima e quelle della domanda dopo */
 
 const emptyQuizSpace = () => {
@@ -131,10 +159,13 @@ ALLA PROSSIMA DOMANDA
 const checkScore = () => {
   const answerOptions = questions[currentQuestion - 1].answerOptions;
   const chosenOption = document.querySelector('input[name="quiz"]:checked');
-  const answer = answerOptions.find((option) => option.id === chosenOption.id);
-
-  if (answer && answer.isCorrect) {
-    totalScore++;
+  if (chosenOption) {
+    const answer = answerOptions.find(
+      (option) => option.id === chosenOption.id
+    );
+    if (answer && answer.isCorrect) {
+      totalScore++;
+    }
   }
   currentQuestion++;
 };
@@ -143,18 +174,20 @@ const checkScore = () => {
  */
 
 const eventHandler = (event) => {
-  event.preventDefault();
+  if (event) event.preventDefault();
+  clearInterval(questionTimer);
   checkScore();
   if (currentQuestion <= questions.length) {
     emptyQuizSpace();
     createQuestionText();
     createAnswerOptions();
     createCurrentQuestiontext();
-    console.log(totalScore);
+    startQuestionTimer();
   } else {
+    clearInterval(questionTimer);
     localStorage.setItem("totalScore", totalScore.toString());
     localStorage.setItem("totalQuestions", totalQuestions.toString());
-    window.location.href = "page3.html";
+    window.location.href = "/html/page3.html";
   }
 };
 
@@ -162,6 +195,7 @@ const init = (event) => {
   createQuestionText();
   createAnswerOptions();
   createCurrentQuestiontext();
+  startQuestionTimer();
 };
 
 nextButton.addEventListener("click", eventHandler);
