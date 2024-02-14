@@ -132,16 +132,16 @@ const checkScore = () => {
 const eventHandler = (event) => {
   event.preventDefault();
   checkScore();
-  //if (currentQuestion <= questions.length) {
-  emptyQuizSpace();
-  createQuestionText();
-  createAnswerOptions();
-  createCurrentQuestiontext();
-  console.log(totalScore);
-  // } else {
-  //   localStorage.setItem("totalScore", totalScore.toString());
-  //   window.location.href = "page3.html";
-  // }
+  if (currentQuestion <= questions.length) {
+    emptyQuizSpace();
+    createQuestionText();
+    createAnswerOptions();
+    createCurrentQuestiontext();
+    console.log(totalScore);
+  } else {
+    localStorage.setItem("totalScore", totalScore.toString());
+    window.location.href = "page3.html";
+  }
 };
 
 const init = (event) => {
