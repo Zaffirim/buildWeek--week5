@@ -1,4 +1,7 @@
+//ARRAY CHE ANDREMO A POPOLARE CON LE NOSTRE STELLINE
 const stars = [];
+
+/* FUNZIONE CHE CI ANDRà A COLORARE LE NOSTRE STELLE UNA VOLTA CLICKATE */
 
 function highlightStars() {
   const index = this.getAttribute("id");
@@ -11,6 +14,11 @@ function highlightStars() {
     }
   }
 }
+
+/* FUNZIONE CON CUI ANDREMO A CREARE LE STELLE: LO FAREMO ANDANDOCI A RIPRENDERE IL DIV starBar, CHE ANDREMO A POPOLARE CON GLI SVG DELLE STELLE. PER FARE CIò FAREMO UN CICLO FOR 
+IN CUI CREEREMO GLI ELEMENTI SVG CON createElementNS UTILE QUANDO SI LAVORA CON QUESTI TIPO DI ELEMENTI, GLI ATTRIBUIREMO UN ID E UN INDICE i e una class star. 
+ANDREMO A CREARE IL path DELL'SVG PER POI AGGIUNGERLO A TUTTI GLI ELEMENTI SVG CHE ANDREMO A LORO VOLTA AD AGGIUNGERE AL DIV starBar(creato in HTML) E INFINE POPOLEREMO
+IL NOSTRO ARRAY stars (CON TUTTI I NOSTRI SVG). ALLA FINE AGGIUNGEREMO UNA FUNZIONE DI CALLBACK svg.addEventListener("click", highlightStars); CHE RICHIAMERà LA FUNZIONE highlightStars() */
 
 const createStars = () => {
   const starBar = document.getElementById("starBar");
@@ -39,12 +47,19 @@ const eventHandler = (event) => {
   console.log(stars);
 };
 
+/* Questo significa che il browser inizierà a "ascoltare" per un evento specifico. 
+DOMContentLoaded Indica l'evento specifico a cui si vuole essere notificati. 
+In questo caso, l'evento è "DOMContentLoaded", che viene attivato non appena il browser ha terminato di caricare la struttura HTML della pagina.
+eventHandler => Questa è la funzione che verrà eseguita quando l'evento "DOMContentLoaded" viene attivato.  */
+
 document.addEventListener("DOMContentLoaded", eventHandler);
 
 const moreInfoButton = document.getElementById("moreInfo");
 const feedbackText = document.getElementById("feedback-txt");
 const errorMessage = document.getElementById("error-message-p4");
 
+/* Funzione che controlla che l'input del nostro feedback al momento del click sul button "moreInfo" non sia vuoto   
+ */
 moreInfoButton.addEventListener("click", () => {
   if (feedbackText.value) {
     alert("Thank you for your feedback");

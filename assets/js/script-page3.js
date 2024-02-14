@@ -1,6 +1,10 @@
+/* VARIABILI GLOBALI CHE CI SERVIRANNO IN SEGUITO  TRA CUI totalScore e totalQuestions CHE CI SIAMO PORTATI DALLA PAGE2 TRAMITE L'UTILIZZO DI LOCALSTORAGE*/
 const totalScore = Number(localStorage.getItem("totalScore")) || 0;
 const totalQuestions = Number(localStorage.getItem("totalQuestions")) || 0;
 const percentage = Math.round((totalScore / totalQuestions) * 100);
+
+/*  FUNZIONE CHE CI CREA LA SEZIONE IN CUI ANDREMO A METTERE IL RISULTATO DELLE RISPOSTE CORRETTE E ANCHE IL CENTRO DEL DIAGRAMMA DOVE CI DARà LE CONGRATULAZIONI SE PASSATO 
+O LE SCUSE SE SI è STATI BOCCIATI */
 
 const createCorrectSection = () => {
   const correctPercentage = document.getElementById("percentage-correct");
@@ -9,6 +13,8 @@ const createCorrectSection = () => {
   correctPercentage.innerText = `${percentage}%`;
   totalCorrect.innerText = `${totalScore} / ${totalQuestions} questions`;
 };
+
+/* FUNZIONE CHE CI CREA LA SEZIONE IN CUI ANDREMO A METTERE IL RISULTATO DELLE RISPOSTE SBAGLIATE */
 
 const createWrongSection = () => {
   const wrongPercentage = document.getElementById("percentage-wrong");
@@ -19,6 +25,8 @@ const createWrongSection = () => {
     totalQuestions - totalScore
   } / ${totalQuestions} questions`;
 };
+
+/* FUNZIONE CHE CONTROLLA CHE LA PERCENTUALE DI DOMANDE SUPERATE SIA SUPERIORE AL 60% E CI CONFERMI CHE ABBIAMO PASSATO L'ESAME O CHE NON LO ABBIAMO PASSATO  */
 
 const createResultMessage = () => {
   const textResult = document.getElementById("textResult");
@@ -35,6 +43,8 @@ const createResultMessage = () => {
   }
   textResult.appendChild(statusSpan);
 };
+
+//SOLITA FUNZIONE CHE GESTISCE LE FUNZIONI DELLA PAGINA
 
 const eventHandler = (event) => {
   createCorrectSection();
