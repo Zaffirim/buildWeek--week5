@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Benchmark - Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&family=Outfit:wght@100;300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/normalize.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
@@ -27,13 +34,19 @@
 
       <form>
         <div id="feedback-input-div">
-          <input type="text" placeholder="Write your comment here" />
+          <input
+            type="text"
+            placeholder="Write your comment here"
+            id="feedback-txt"
+          />
         </div>
 
+        <p id="error-message-p4">You must fill in thid field!</p>
         <div id="moreInfo">
-          <a href="javscript:void(0)">More info</a>
+          <a href="javascript:void(0)">More info</a>
         </div>
       </form>
     </div>
+    <script src="../assets/js/script-page4.js"></script>
   </body>
 </html>
