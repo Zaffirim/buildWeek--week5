@@ -285,10 +285,82 @@ li span {
 
 /* PAGE 4 */
 
-.checked {
-    fill: #B40088;
+#p4-main {
+    text-align: center;
+}
+
+#feedback-title {
+    margin: 0 auto;
+    width: 43%;
+}
+
+#feedback-title h2 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+#feedback-title p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+svg {
+    width: 5%;
+    height: 15vh;
+}
+
+#feedback > p {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+
+#feedback-input-div {
+    margin: 0 auto;
+    width: 53%;
+    border-bottom: solid 2px #C2128D;
+    text-align: left;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+#feedback-txt {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    font-size: 1.2em;
+    color: white;
+}
+
+#feedback-txt {
+    outline: none;
 }
 
 #error-message-p4 {
     display: none;
+    color: #C2128D;
+    margin-top: 5px;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+#moreInfo {
+    text-decoration: none;
+    color: #0A1C44;
+}
+
+#more-info-div {
+    width: 10%;
+    margin: 0 auto;
+    margin-top: 3em;
+    background-color: aqua;
+    padding: 1em 3em;
+    box-shadow: 0 0px 16px 0 aqua, 0 0px 20px 0 aqua;
+}
+
+#more-info-div p {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2em;
 }
