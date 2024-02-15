@@ -110,7 +110,7 @@ const COLOR_CODES = {
   },
 };
 
-let TIME_LIMIT = 30;
+let TIME_LIMIT = 0;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -164,6 +164,12 @@ document.querySelector("#timer").innerHTML = `
   };
 }); */
 
+window.addEventListener("load", () =>{
+  TIME_LIMIT = 10;
+startTimer();
+
+})
+
 function startTimer() {
   console.log("value");
 
@@ -178,14 +184,17 @@ function startTimer() {
     setRemainingPathColor(timeLeft);
 
     if (timeLeft === 0) {
+      clearInterval(timerInterval)
       onTimesUp();
-    }
+      eventHandler();
+    } 
+
   }, 1000);
 }
 
 function onTimesUp() {
   clearInterval(timerInterval);
-  TIME_LIMIT = 0;
+  TIME_LIMIT = 10;
 }
 
 function formatTime(time) {
@@ -239,12 +248,13 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 
-const createTimer = () => {
+/* const createTimer = () => {
   startTimer();
   onTimesUp();
   setCircleDasharray();
   
-}
+} */
+
 /* 
 //FUNZIONE CHE, ALLO SCADERE DEL TEMPO, CREA UN NUOVO EVENTO 'CLICK' SUL BOTTONE 'NEXT' E PASSA ALLA SCHERMATA SUCCESSIVA
 
@@ -331,13 +341,15 @@ const checkScore = () => {
 
 const eventHandler = (event) => {
   if (event) event.preventDefault();
-  clearInterval(questionTimer);
+  /* clearInterval(questionTimer); */
   checkScore();
   if (currentQuestion <= questions.length) {
     emptyQuizSpace();
     createQuestionText();
     createAnswerOptions();
     createCurrentQuestiontext();
+    onTimesUp()
+    startTimer();
     /* startQuestionTimer(); */
   } else {
     clearInterval(questionTimer);
@@ -351,6 +363,9 @@ const init = (event) => {
   createQuestionText();
   createAnswerOptions();
   createCurrentQuestiontext();
+  createTimer();
+  startTimer();
+  onTimesUp();
   /* startQuestionTimer(); */
 };
 
