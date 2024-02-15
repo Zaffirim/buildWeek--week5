@@ -89,25 +89,27 @@ let currentQuestion = 1;
 let totalScore = 0;
 const totalQuestions = questions.length;
 
-let timeLeft = 5;
+let timeLeft = 0;
 let questionTimer;
 
 //FUNZIONE CHE, ALLO SCADERE DEL TEMPO, CREA UN NUOVO EVENTO 'CLICK' SUL BOTTONE 'NEXT' E PASSA ALLA SCHERMATA SUCCESSIVA
 
 const startQuestionTimer = () => {
   clearInterval(questionTimer);
-  timeLeft = 5;
+  timeLeft = 30;
   updateTimerDisplay(timeLeft);
 
-  questionTimer = setInterval(() => {
-    timeLeft -= 1;
-    updateTimerDisplay(timeLeft);
+  questionTimer = setInterval(runTimer, 1000);
+};
 
-    if (timeLeft <= 0) {
-      clearInterval(questionTimer);
-      eventHandler();
-    }
-  }, 1000);
+const runTimer = () => {
+  timeLeft -= 1;
+  updateTimerDisplay(timeLeft);
+
+  if (timeLeft <= 0) {
+    clearInterval(questionTimer);
+    eventHandler(new Event("click"));
+  }
 };
 
 // FUNZIONE PER MOSTRARE SUL BROWSER I SECONDI RIMANENTI

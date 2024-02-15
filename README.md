@@ -45,10 +45,11 @@ Setta il display del messaggio di errore a 'block'
 
 ### 2. script-page2.js
 
-#### - questions -array
+Gestisce la logica del quiz, dalla visualizzazione delle domande e delle opzioni di risposta al calcolo del punteggio e alla gestione del tempo.
 
-Struttura dati delle domande
-un array contenente domande sotto forma di oggetti, con le seguenti caratteristiche:
+#### - Struttura dati - domande del quiz
+
+Un array contenente domande sotto forma di oggetti, con le seguenti caratteristiche:
 
 ```javascript
 {
@@ -63,20 +64,70 @@ un array contenente domande sotto forma di oggetti, con le seguenti caratteristi
 }
 ```
 
-#### - eventHandler()
+#### - updateTimerDisplay(seconds)
 
-Chiamata come callback all'evento 'Click' sul button 'Next'
+Aggiorna il timer visualizzato, mostrando i secondi rimasti. È importante per tenere l'utente informato sul tempo disponibile per rispondere.
 
-Azzera timer
-Controlla il punteggio
-Popola la sezione del quiz dedicata alle domande e alle opzioni di risposta finchè sono presenti domande nell'array 'questions'
-Riavvia timer per ogni domanda
+#### - emptyQuizSpace()
 
-Se non ci sono domande, salva punteggio e lunghezza array domande nel local storage
-Passa alla pagina dei risultati
+Pulisce l'area del quiz, rimuovendo le domande e le risposte precedenti. Questo assicura che ogni domanda venga presentata in uno spazio vuoto, senza interferenze.
 
-#### - init()
+#### - createCurrentQuestionText()
 
-Chiamata come callback al caricamento della pagina
+Mostra il numero della domanda corrente e il totale delle domande. Fornisce un contesto chiaro sull'avanzamento del quiz.
 
-Crea la prima domanda e avvia il timer
+#### - createQuestionText()
+
+Visualizza il testo della domanda attuale. Estrae e mostra la domanda dall'array basandosi sull'indice corrente.
+
+#### - createAnswerOptions()
+
+Genera le opzioni di risposta per la domanda in corso. Crea elementi HTML per ogni opzione, permettendo all'utente di selezionare la propria risposta.
+
+#### - checkScore()
+
+Verifica se la risposta scelta è corretta, aggiornando il punteggio. Incrementa il punteggio per ogni risposta esatta e prepara il passaggio alla prossima domanda.
+
+#### - eventHandler(event)
+
+Gestisce il click su "Next". Controlla risposte, aggiorna il punteggio e, a fine quiz, salva il risultato e reindirizza l'utente alla pagina dei risultati.
+
+#### - init(event)
+
+Inizializza il quiz al caricamento della pagina. Prepara la prima domanda, visualizza le opzioni di risposta e avvia il timer, assicurando che l'utente possa iniziare immediatamente.
+
+### 3. script-page3.js
+
+Elabora i dati salvati precedentemente per offrire un feedback dettagliato e personalizzato sui risultati del quiz dell'utente
+
+#### - createCorrectSection()
+
+Visualizza la percentuale e il numero di risposte corrette. Aggiorna il DOM con i valori calcolati, mostrando all'utente il suo rendimento in termini di risposte esatte.
+
+#### - createWrongSection()
+
+Mostra la percentuale e il numero di risposte sbagliate. Calcola e visualizza quanto il partecipante ha sbagliato rispetto alle risposte corrette.
+
+#### - createResultMessage()
+
+Decreta se il partecipante ha superato o meno il test. Basandosi sulla percentuale di successo, mostra un messaggio di congratulazioni o di scuse.
+
+#### - eventHandler(event)
+
+Al caricamento della pagina, esegue le funzioni principali per compilare le sezioni dei risultati. Questo metodo assicura che il contenuto sia pronto e visualizzato non appena l'utente accede alla pagina dei risultati.
+
+### 4. script-page3.js
+
+Raccolta del feedback dell'utente attraverso una valutazione a stelle e un campo di testo per commenti aggiuntivi
+
+#### - highlightStars()
+
+Colora le stelle al click. Assegna un colore differente alle stelle fino all'indice cliccato, indicando visivamente la valutazione data dall'utente.
+
+#### - createStars()
+
+Genera le stelle nella barra di valutazione. Aggiunge un listener di click che attiva highlightStars() per gestire la valutazione.
+
+#### - eventHandler(event)
+
+Al caricamento della pagina, chiama createStars per popolare la barra di valutazione con le stelle, permettendo all'utente di dare un feedback visivo.
