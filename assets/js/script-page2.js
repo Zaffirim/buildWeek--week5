@@ -3,25 +3,26 @@
 const questions = [
   {
     questionNumber: 1,
-    questionText: "Domanda 1",
+    questionText:
+      "The C programming language was created by this American computer scientist.",
     answerOptions: [
       {
-        text: "Risposta 1",
+        text: "Dennis Ritchie",
         isCorrect: true,
         id: "q1-o1",
       },
       {
-        text: "Risposta 2",
+        text: "Tim Berners Lee",
         isCorrect: false,
         id: "q1-o2",
       },
       {
-        text: "Risposta 3",
+        text: "al-Khwārizmī",
         isCorrect: false,
         id: "q1-o3",
       },
       {
-        text: "Risposta 4",
+        text: "Willis Ware",
         isCorrect: false,
         id: "q1-o4",
       },
@@ -29,25 +30,25 @@ const questions = [
   },
   {
     questionNumber: 2,
-    questionText: "Domanda 2",
+    questionText: "What does CPU stand for?",
     answerOptions: [
       {
-        text: "Risposta 1",
-        isCorrect: true,
+        text: "Computer Personal Unit",
+        isCorrect: false,
         id: "q2-o1",
       },
       {
-        text: "Risposta 2",
+        text: "Central Process Unit",
         isCorrect: false,
         id: "q2-o2",
       },
       {
-        text: "Risposta 3",
-        isCorrect: false,
+        text: "Central Processing Unit",
+        isCorrect: true,
         id: "q2-o3",
       },
       {
-        text: "Risposta 4",
+        text: "Central Processor Unit",
         isCorrect: false,
         id: "q2-o4",
       },
@@ -55,27 +56,208 @@ const questions = [
   },
   {
     questionNumber: 3,
-    questionText: "Domanda 3",
+    questionText: "What amount of bits commonly equals one byte?",
     answerOptions: [
       {
-        text: "Risposta 1",
-        isCorrect: true,
+        text: "2",
+        isCorrect: false,
         id: "q3-o1",
       },
       {
-        text: "Risposta 2",
-        isCorrect: false,
+        text: "8",
+        isCorrect: true,
         id: "q3-o2",
       },
       {
-        text: "Risposta 3",
+        text: "64",
         isCorrect: false,
         id: "q3-o3",
       },
       {
-        text: "Risposta 4",
+        text: "1",
         isCorrect: false,
         id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 4,
+    questionText: "'HTML' stands for Hypertext Markup Language.",
+    answerOptions: [
+      {
+        text: "True",
+        isCorrect: true,
+        id: "q3-o1",
+      },
+      {
+        text: "False",
+        isCorrect: false,
+        id: "q3-o2",
+      },
+    ],
+  },
+  {
+    questionNumber: 5,
+    questionText:
+      "Ada Lovelace is often considered the first computer programmer.",
+    answerOptions: [
+      {
+        text: "True",
+        isCorrect: true,
+        id: "q3-o1",
+      },
+      {
+        text: "False",
+        isCorrect: false,
+        id: "q3-o2",
+      },
+    ],
+  },
+  {
+    questionNumber: 6,
+    questionText:
+      "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+    answerOptions: [
+      {
+        text: "512",
+        isCorrect: false,
+        id: "q3-o1",
+      },
+      {
+        text: "1024",
+        isCorrect: false,
+        id: "q3-o2",
+      },
+      {
+        text: "500",
+        isCorrect: false,
+        id: "q3-o3",
+      },
+      {
+        text: "1000",
+        isCorrect: true,
+        id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 7,
+    questionText: "What does the Prt Sc button do?",
+    answerOptions: [
+      {
+        text: "Saves a .png file of what's on the screen in your screenshots folder in photos",
+        isCorrect: false,
+        id: "q3-o1",
+      },
+      {
+        text: "Closes all windows",
+        isCorrect: false,
+        id: "q3-o2",
+      },
+      {
+        text: "Captures what's on the screen and copies it to your clipboard",
+        isCorrect: true,
+        id: "q3-o3",
+      },
+      {
+        text: "Nothing",
+        isCorrect: false,
+        id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 8,
+    questionText: "In computing, what does MIDI stand for?",
+    answerOptions: [
+      {
+        text: "Musical Interface of Digital Instruments",
+        isCorrect: false,
+        id: "q3-o1",
+      },
+      {
+        text: "Musical Instrument Digital Interface",
+        isCorrect: true,
+        id: "q3-o2",
+      },
+      {
+        text: "Modular Interface of Digital Instruments",
+        isCorrect: false,
+        id: "q3-o3",
+      },
+      {
+        text: "Musical Instrument Data Interface",
+        isCorrect: false,
+        id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 9,
+    questionText:
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    answerOptions: [
+      {
+        text: "Final",
+        isCorrect: true,
+        id: "q3-o1",
+      },
+      {
+        text: "Public",
+        isCorrect: false,
+        id: "q3-o2",
+      },
+      {
+        text: "Private",
+        isCorrect: false,
+        id: "q3-o3",
+      },
+      {
+        text: "Static",
+        isCorrect: false,
+        id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 10,
+    questionText: "What language does Node.js use?",
+    answerOptions: [
+      {
+        text: "Java",
+        isCorrect: false,
+        id: "q3-o1",
+      },
+      {
+        text: "JavaScript",
+        isCorrect: true,
+        id: "q3-o2",
+      },
+      {
+        text: "Python",
+        isCorrect: false,
+        id: "q3-o3",
+      },
+      {
+        text: "Java Source",
+        isCorrect: false,
+        id: "q3-o4",
+      },
+    ],
+  },
+  {
+    questionNumber: 11,
+    questionText: "Javascript is considered a static language.",
+    answerOptions: [
+      {
+        text: "True",
+        isCorrect: false,
+        id: "q3-o1",
+      },
+      {
+        text: "False",
+        isCorrect: true,
+        id: "q3-o2",
       },
     ],
   },
