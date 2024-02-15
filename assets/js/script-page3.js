@@ -44,11 +44,23 @@ const createResultMessage = () => {
   textResult.appendChild(statusSpan);
 };
 
+const createResultsBar = () => {
+  const correctPercentage = (totalScore / totalQuestions) * 100;
+  const wrongPercentage = 100 - correctPercentage;
+
+  const resultsBar = document.querySelector(".results-bar");
+  resultsBar.innerHTML = `
+    <div class="correct-answers" style="width: ${correctPercentage}%"></div>
+    <div class="wrong-answers" style="width: ${wrongPercentage}%"></div>
+  `;
+};
+
 //SOLITA FUNZIONE CHE GESTISCE LE FUNZIONI DELLA PAGINA
 
 const eventHandler = (event) => {
   createCorrectSection();
   createResultMessage();
+  createResultsBar();
   createWrongSection();
 };
 

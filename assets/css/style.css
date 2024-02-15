@@ -257,8 +257,30 @@ li span {
 }
 
 
+.results-bar {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 3em;
+    width: 80%;
+    height: 2em;
+    background-color: #eeeeee00;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .correct-answers {
+    background-color: #00FFFF;
+    height: 100%;
+  }
+  
+  .wrong-answers {
+    background-color: #C2128D;
+    height: 100%;
+  }
+
+
 #textResult {
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 #textResult span {
@@ -268,8 +290,8 @@ li span {
 
 #textComment {
     margin: 0 auto;
-    width: 31%;
-    font-size: 0.9em;
+    width: 40%;
+    font-size: 1.3em;
     font-weight: 100;
 }
 
