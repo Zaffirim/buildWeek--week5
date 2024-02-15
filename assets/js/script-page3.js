@@ -10,7 +10,7 @@ const createCorrectSection = () => {
   const correctPercentage = document.getElementById("percentage-correct");
   const totalCorrect = document.getElementById("total-correct");
 
-  correctPercentage.innerText = `${percentage}%`;
+  correctPercentage.innerText = `${percentage.toFixed(1)}%`;
   totalCorrect.innerText = `${totalScore} / ${totalQuestions} questions`;
 };
 
