@@ -362,7 +362,7 @@ const checkScore = () => {
  */
 
 const eventHandler = (event) => {
-  if (event) event.preventDefault();
+  event.preventDefault();
   clearInterval(questionTimer);
   checkScore();
   if (currentQuestion <= questions.length) {
