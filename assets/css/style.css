@@ -99,6 +99,21 @@ li span {
 
 /* PAGE 2 - BENCHMARK QUIZ */
 
+.timer-div {
+    margin: 0 auto;
+    width: 20%;
+}
+
+.timer p {
+    font-size: 2em;
+}
+
+.progress-bar {
+    background-color: #C2128D;
+    height: 2vh;
+    border-radius: 20px;
+}
+
 #page2-main, #page2-form {
     text-align: center;
 }

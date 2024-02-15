@@ -117,6 +117,10 @@ const runTimer = () => {
 const updateTimerDisplay = (seconds) => {
   const timerDisplay = document.querySelector(".timer");
   timerDisplay.innerHTML = `<p>Tempo rimanente: ${seconds} secondi</p>`;
+
+  const progressBar = document.querySelector(".progress-bar");
+  const percentage = (seconds / 30) * 100;
+  progressBar.style.width = `${percentage}%`;
 };
 
 /* FUNZIONE CHE SVUOTA IL DIV 'quizSpace' sapzio in cui ci sono le risposte, sennò ci sarebbero le risposte della domanda prima e quelle della domanda dopo */
