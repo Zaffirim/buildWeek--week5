@@ -55,13 +55,13 @@ Un array contenente domande sotto forma di oggetti, con le seguenti caratteristi
 
 questions = [
     {
-        questionNumber: number
-        questionText: string
+        questionNumber: number,
+        questionText: string,
         answerOptions: [
             text: string,
             isCorrect: boolean,
             id: string
-        ]
+        ],
     }
 ]
 ```
