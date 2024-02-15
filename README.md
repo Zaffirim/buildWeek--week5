@@ -52,16 +52,18 @@ Gestisce la logica del quiz, dalla visualizzazione delle domande e delle opzioni
 Un array contenente domande sotto forma di oggetti, con le seguenti caratteristiche:
 
 ```javascript
-{
-    questionNumber: number
-    questionText: string
-    answerOptions: array di oggetti
+
+questions = [
     {
-        text: string,
-        isCorrect: boolean,
-        id: string
+        questionNumber: number
+        questionText: string
+        answerOptions: [
+            text: string,
+            isCorrect: boolean,
+            id: string
+        ]
     }
-}
+]
 ```
 
 #### - updateTimerDisplay(seconds)
