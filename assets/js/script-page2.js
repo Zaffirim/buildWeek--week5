@@ -281,13 +281,15 @@ const startQuestionTimer = () => {
   timeLeft = 30;
   updateTimerDisplay(timeLeft);
 
-  questionTimer = setInterval(runTimer, 1000);
+  questionTimer = setInterval(runTimer, 1000); //ogni 1000 millisecondi viene chiamata runTimer
 };
 
 const runTimer = () => {
+  //ogni secondo, diminuisce timeLeft di 1 e fa il display a schermo
   timeLeft -= 1;
   updateTimerDisplay(timeLeft);
 
+  //se il tempo scade, si azzera il timer e viene simulato/forzato un click sul bottone 'Next' per passare alla domanda successiva
   if (timeLeft <= 0) {
     clearInterval(questionTimer);
     eventHandler(new Event("click"));
