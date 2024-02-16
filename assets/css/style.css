@@ -27,6 +27,100 @@ h1, .welcome-text p, li, .form-checkbox label, #correct-space p:first-child, #wr
     font-weight: 300;
 }
 
+h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .rate-button p {
+    font-weight: 700;
+}
+
+.welcome-text h4, .timer p, .title p, #textResult {
+    font-size: 2em;
+}
+
+.welcome-text h4, #error-message, #error-message-p4 {
+    color: #C2128D;
+}
+
+.welcome-text h4, .answer-option label, #correct-space p:first-child, #wrong-space p:first-child, #feedback-title h2, #error-message-p4 {
+    margin-bottom: 0;
+}
+
+.welcome-form, .proceed, .answer-option, #correct-space, #result-message-graph, #wrong-space {
+    display: inline-block;
+}
+
+#error-message, .answer-option input[type="radio"], #textComment, #error-message-p4 {
+    display: none;
+}
+
+#proceed-link, #rateUs, #moreInfo {
+    text-decoration: none;
+}
+
+.proceed, .correct-answers, #more-info-div {
+    background-color: #00FFFF;
+}
+
+.proceed, #page2-main, #page2-form, .answer-option label, #page3-main, #p4-main  {
+    text-align: center;
+}
+
+.proceed, #next-button, #more-info-div {
+    padding: 1em 3em;
+}
+
+.proceed, #more-info-div {
+    box-shadow: 0 0px 16px 0 #00FFFF, 0 0px 20px 0 #00FFFF;
+}
+
+.proceed p, #next-button, #current-question, .rate-button p, #more-info-div p {
+    text-transform: uppercase;
+}
+
+.proceed p, #textComment, #current-question {
+    font-size: 1.3em
+}
+
+.proceed p, #more-info-div p {
+    font-weight: 800;
+} 
+
+.proceed p, #percentage-correct, #percentage-wrong, #total-correct, #total-wrong, #more-info-div p  {
+    margin: 0;
+}
+
+.timer-div, #page2-form, .quiz-space, .results-bar, #textComment, .rate-button, #feedback-title, #feedback-input-div, #more-info-div  {
+    margin: 0 auto;
+}
+
+.progress-bar, .results-bar {
+    border-radius: 20px
+}
+
+#question-txt, #correct-space p:first-child, #wrong-space p:first-child, #feedback-title h2 {
+    font-size: 3em;
+}
+
+.timer-div, #correct-space, #wrong-space {
+    width: 20%;
+}
+
+.answer-option label, #percentage-correct, #percentage-wrong, #textResult span {
+    display: block;
+}
+
+.answer-option label, .answer-option input:checked + label, #next-button, .rate-button p, #feedback-txt {
+    color: white;
+}
+
+.answer-option label, #total-correct, #total-wrong, #feedback-txt, #error-message-p4, #more-info-div p {
+    font-size: 1.2em;
+}
+
+#feedback-txt, #next-button {
+    background-color: transparent;
+} 
+
+/* PAGINA 1 */
+
 h1 {
     margin-top: 1em;
     width: 30%;
@@ -34,19 +128,12 @@ h1 {
     line-height: 0.7em;
 }
 
-h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .rate-button p {
-    font-weight: 700;
-}
-
 .welcome-text {
     margin-bottom: 3em;
 }
 
 .welcome-text h4 {
-    font-size: 2em;
     font-weight: 500;
-    color: rgb(255, 0, 196);
-    margin-bottom: 0;
 }
 
 .welcome-text p {
@@ -63,88 +150,40 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
 }
 
 .welcome-form {
-    display: inline-block;
     margin-right: 25%;
 }
 
-#error-message {
-    display: none;
-    color: rgb(255, 0, 196);
-}
-
 #proceed-link {
-    text-decoration: none;
     color: rgb(28, 28, 28);
-}
-
-.proceed {
-     display: inline-block;
-    background-color: aqua;
-    text-align: center;
-    padding: 1em 3em;
-    box-shadow: 0 0px 16px 0 aqua, 0 0px 20px 0 aqua;
-}
-
-.proceed p {
-    text-transform: uppercase;
-    font-size: 1.3em;
-    font-weight: 800;
-    margin: 0;
 }
 
 /* PAGE 2 - BENCHMARK QUIZ */
 
-.timer-div {
-    margin: 0 auto;
-    width: 20%;
-}
-
-.timer p {
-    font-size: 2em;
-}
-
 .progress-bar {
-    background-color: #C2128D;
     height: 2vh;
-    border-radius: 20px;
+    background-color: #C2128D;
 }
-
-#page2-main, #page2-form {
-    text-align: center;
-}
-
-#question-txt {
-    font-size: 3em;
-}
-
-#page2-form, .quiz-space  {
-    margin: 0 auto;
-}
-
-
 
 .quiz-space {
     width: 60%;
 }
 
 .answer-option {
-    display: inline-block;
     width: 50%
-
 }
 
-.answer-option label {
-    display: block;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white; 
-    margin: 1rem; 
-    margin-bottom: 0;
+.answer-option label, #next-button {
     cursor: pointer;
+}
+
+.answer-option label, .answer-option input:checked + label
+
+.answer-option label {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1rem; 
     padding: 1.3rem 0.1rem;
     border: 2px solid transparent; 
     border-radius: 30px;
-    font-size: 1.2em;
     border: 4px solid rgba(255, 255, 255, 0.732);
 
 }
@@ -153,26 +192,16 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
     background-color: rgba(255, 255, 255, 0.206);
 }
 
-
-.answer-option input[type="radio"] {
-    display: none;
-}
-
 .answer-option input:checked + label {
     background-color: #B40088; 
-    color: white; 
-    border: 4px solid rgba(255, 255, 255, 0.732);
+}
+
+.rate-button, #next-button {
+    border: solid 2px white;
 }
 
 #next-button {
-    margin-top: 4em;
-    padding: 1em 3em;
     font-weight: 900;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: solid 2px white;
-    color: white;
-    cursor: pointer;
     border-radius: 7px;
 }
 
@@ -180,10 +209,8 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
     background-color: rgba(255, 255, 255, 0.124);
 }
 
-#current-question {
+#current-question, #next-button {
     margin-top: 4em;
-    text-transform: uppercase;
-    font-size: 1.3em;
 }
 
 #purple-txt {
@@ -192,27 +219,14 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
 
 /* PAGE 3 */
 
-#page3-main {
-    text-align: center;
-}
-
-#textComment {
-    display: none;
-}
-
 .title h2 {
     font-size: 3.5em;
     margin: 0.5em 0 0 0;
 }
 
 .title p {
-    font-size: 2em;
     font-weight: 200;
     margin-top: 0;
-}
-
-#correct-space, #result-message-graph, #wrong-space {
-    display: inline-block;
 }
 
 #result-message-graph{
@@ -228,82 +242,40 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
     color: rgba(255, 255, 255, 0.745);
 }
 
-#correct-space,  #wrong-space {
-    width: 20%;
-}
-
-#correct-space p:first-child, #wrong-space p:first-child {
-    font-size: 3em;
-    margin-bottom: 0;
-}
-
-#percentage-correct, #percentage-wrong{
-    display: block;
-    margin: 0;
-}
-
-#total-correct, #total-wrong {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-
 .results-bar {
     display: flex;
-    margin: 0 auto;
     margin-top: 3em;
     width: 80%;
     height: 2em;
     background-color: #eeeeee00;
-    border-radius: 20px;
     overflow: hidden;
   }
   
-  .correct-answers {
-    background-color: #00FFFF;
+.correct-answers {
     height: 100%;
-  }
+}
   
-  .wrong-answers {
-    background-color: #C2128D;
+.wrong-answers {
     height: 100%;
-  }
-
-
-#textResult {
-    font-size: 2em;
+    background-color: #C2128D;
 }
 
 #textResult span {
-    display: block;
-    color: aqua;
+    color: #00FFFF;
 }
 
 #textComment {
-    margin: 0 auto;
     width: 40%;
-    font-size: 1.3em;
     font-weight: 100;
-}
-
-
-#rateUs {
-    text-decoration: none;
 }
 
 .rate-button {
     width: 14%;
-    margin: 0 auto;
     margin-top: 5em;
-    border: solid 2px white;
-
-
 }
 
 .rate-button p {
     font-size: 1.4em;
-    color: white;
-    text-transform: uppercase;
 }
 
 .rate-button:hover {
@@ -312,18 +284,8 @@ h1 span, li span, #current-question, #percentage-correct, #percentage-wrong, .ra
 
 /* PAGE 4 */
 
-#p4-main {
-    text-align: center;
-}
-
 #feedback-title {
-    margin: 0 auto;
     width: 43%;
-}
-
-#feedback-title h2 {
-    font-size: 3em;
-    margin-bottom: 0;
 }
 
 #feedback-title p {
@@ -341,7 +303,6 @@ svg {
 }
 
 #feedback-input-div {
-    margin: 0 auto;
     width: 53%;
     border-bottom: solid 2px #C2128D;
     text-align: left;
@@ -350,11 +311,8 @@ svg {
 }
 
 #feedback-txt {
-    background-color: transparent;
     border: none;
     width: 90%;
-    font-size: 1.2em;
-    color: white;
 }
 
 #feedback-txt {
@@ -362,30 +320,14 @@ svg {
 }
 
 #error-message-p4 {
-    display: none;
-    color: #C2128D;
     margin-top: 5px;
-    font-size: 1.2em;
-    margin-bottom: 0;
 }
 
 #moreInfo {
-    text-decoration: none;
     color: #0A1C44;
 }
 
 #more-info-div {
     width: 10%;
-    margin: 0 auto;
     margin-top: 3em;
-    background-color: aqua;
-    padding: 1em 3em;
-    box-shadow: 0 0px 16px 0 aqua, 0 0px 20px 0 aqua;
-}
-
-#more-info-div p {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.2em;
 }
