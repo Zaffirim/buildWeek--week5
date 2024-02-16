@@ -348,7 +348,7 @@ ALLA PROSSIMA DOMANDA
 
 const checkScore = () => {
   const answerOptions = questions[currentQuestion - 1].answerOptions;
-  const chosenOption = document.querySelector('input[name="quiz"]:checked');
+  const chosenOption = document.querySelector('input:checked');
   if (chosenOption) {
     const answer = answerOptions.find(
       (option) => option.id === chosenOption.id
